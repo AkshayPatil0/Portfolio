@@ -42,7 +42,10 @@ export default function RootLayout({
           property="og:description"
           content="Full stack web developer. ❤️ Building Applications"
         />
-        <meta property="og:image" content={`${process.env.WEBSITE}/logo.png`} />
+        <meta
+          property="og:image"
+          content={`${process.env.WEBSITE}/image.png`}
+        />
         <meta property="og:url" content={process.env.WEBSITE} />
         <meta property="og:type" content="website" />
 
@@ -57,7 +60,7 @@ export default function RootLayout({
         />
         <meta
           name="twitter:image"
-          content={`${process.env.WEBSITE}/logo.png`}
+          content={`${process.env.WEBSITE}/image.png`}
         />
       </head>
       <body className={cn(sora.className, "m-auto max-w-screen-2xl")}>
