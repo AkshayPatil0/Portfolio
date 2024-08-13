@@ -7,7 +7,7 @@ export function Contact() {
 
     const body = {
       ...data,
-      access_key: "ad916a9e-3765-4d2f-bab2-abe394f916d7",
+      access_key: process.env.WEB_3_FORMS_API_KEY,
     };
 
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -41,8 +41,8 @@ export function Contact() {
           </p>
           <div className="flex flex-col gap-2">
             <h3 className="text-xl font-semibold">
-              <a href="mailto:mailskahayspatil@gmail.com">
-                mailskahayspatil@gmail.com
+              <a href="mailto:mailakshayspatil@gmail.com">
+                mailakshayspatil@gmail.com
               </a>
             </h3>
             <h3 className="text-xl font-semibold">

@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <MainContainerLayout
       as="footer"
-      className="flex flex-row items-center justify-between gap-8 bg-primary py-4 text-bg"
+      className="flex flex-row items-center justify-between gap-8 bg-primary py-4 text-bg lg:py-4"
     >
       <Logo />
       <div>

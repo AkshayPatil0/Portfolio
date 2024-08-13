@@ -14,7 +14,10 @@ export function MainContainerLayout({
 }: PropsWithChildren<{ as?: ElementType } & HTMLAttributes<HTMLElement>>) {
   return (
     <Tag
-      className={cn("w-full px-4 py-20 md:px-12 lg:px-12 xl:px-32", className)}
+      className={cn(
+        "w-full px-4 py-12 md:px-12 lg:px-12 lg:py-20 xl:px-32",
+        className,
+      )}
       {...otherProps}
     >
       {children}

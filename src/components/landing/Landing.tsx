@@ -39,7 +39,7 @@ export default function Landing() {
           <SocialLinks />
         </div>
       </div>
-      <div className="overflow-hidden hue-rotate-30 filter lg:w-4/6">
+      <div className="overflow-hidden lg:w-4/6">
         <ManWithLaptopSvg className="-ml-[40%] w-[140%] lg:ml-0 lg:w-full" />
       </div>
     </MainContainerLayout>
