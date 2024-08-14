@@ -2,41 +2,72 @@
 
 import * as React from "react";
 import { SVGProps } from "react";
-import {
-  motion,
-  MotionProps,
-  useAnimation,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { animate, motion, Variants } from "framer-motion";
 
-const torsoVariants = {
-  initial: {
-    y: 0,
-  },
-  hover: {
-    y: -10,
-  },
+const torsoVariants: Variants = {
+  initial: { y: 0 },
+  view: { y: 0 },
+  hover: { y: -10 },
 };
 
-const leftEyebrowVariants = {
+const leftEyebrowVariants: Variants = {
   initial: { y: 0, x: 0 },
+  view: { y: 0, x: 0 },
   hover: { y: -5, x: -2 },
+  animate: {
+    y: [0, 3, 0],
+    x: [0, 2, 0],
+    transition: {
+      repeat: Infinity,
+      repeatType: "reverse",
+      repeatDelay: 2,
+      duration: 0.3,
+    },
+  },
 };
 
-const rightEyebrowVariants = {
+const rightEyebrowVariants: Variants = {
   initial: { y: 0, x: 0 },
+  view: { y: 0, x: 0 },
   hover: { y: -5, x: 2 },
+  animate: {
+    y: [0, 3, 0],
+    x: [0, -2, 0],
+    transition: {
+      repeat: Infinity,
+      repeatType: "reverse",
+      repeatDelay: 2,
+      duration: 0.3,
+    },
+  },
 };
 
-const mouthVariants = {
+const mouthVariants: Variants = {
   initial: { scale: 1, y: 0 },
+  view: { scale: 1, y: 0 },
   hover: { scale: 1.25, y: 2 },
 };
 
-const eyesVariants = {
-  initial: { scale: 1 },
+const eyesVariants: Variants = {
+  initial: { scale: 1, rotate: 0 },
+  animate: {
+    scaleY: [1, 0.5, 1],
+    rotate: [0, 30, 0],
+    transition: {
+      repeat: Infinity,
+      repeatType: "reverse",
+      repeatDelay: 2,
+      duration: 0.3,
+    },
+  },
+  view: { scale: 1 },
   hover: { scale: 1.2 },
+};
+
+const manVariants: Variants = {
+  initial: { scale: 0.4 },
+  view: { scale: 1 },
+  hover: { scale: 1 },
 };
 
 export const ManHandFoldSvg = (props: SVGProps<SVGSVGElement>) => {
@@ -45,10 +76,12 @@ export const ManHandFoldSvg = (props: SVGProps<SVGSVGElement>) => {
   return (
     <div ref={scrollRef}>
       <motion.svg
-        initial="hover"
+        initial="initial"
         whileHover="hover"
-        whileInView="initial"
-        viewport={{ once: true, amount: 0.5 }}
+        whileTap="hover"
+        whileInView="view"
+        viewport={{ once: true }}
+        animate="animate"
         viewBox="0 0 530 572"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -61,15 +94,7 @@ export const ManHandFoldSvg = (props: SVGProps<SVGSVGElement>) => {
             strokeWidth={4}
             strokeMiterlimit={10}
           />
-          <motion.g
-            id="man"
-            initial={{ scale: 0.4 }}
-            whileInView={{ scale: 1 }}
-            viewport={{
-              root: scrollRef,
-            }}
-            dur={500}
-          >
+          <motion.g id="man" variants={manVariants} dur={500}>
             <motion.g variants={torsoVariants}>
               <motion.g id="torso">
                 <path

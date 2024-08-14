@@ -5,7 +5,7 @@ export function AboutMe() {
   return (
     <MainContainerLayout as="section">
       <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-start lg:gap-8 xl:gap-16">
-        <div className="h-full lg:w-5/12 xl:w-1/2">
+        <div className="lg:w-5/12 xl:w-1/2">
           <ManHandFoldSvg />
         </div>
         <div className="flex flex-1 flex-col items-start lg:w-1/2">
