@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { SVGProps } from "react";
-import { animate, motion, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const torsoVariants: Variants = {
   initial: { y: 0 },
@@ -79,8 +79,6 @@ export const ManHandFoldSvg = (props: SVGProps<SVGSVGElement>) => {
         initial="initial"
         whileHover="hover"
         whileTap="hover"
-        whileInView="view"
-        viewport={{ once: true }}
         animate="animate"
         viewBox="0 0 530 572"
         fill="none"
@@ -308,11 +306,7 @@ export const ManHandFoldSvg = (props: SVGProps<SVGSVGElement>) => {
                         fill="black"
                       />
                     </motion.g>
-                    <motion.g
-                      id="mouth"
-                      variants={mouthVariants}
-                      // style={{ scaleX: mouthScale }}
-                    >
+                    <motion.g id="mouth" variants={mouthVariants}>
                       <path
                         id="Vector_32"
                         d="M278.652 174.486C281.852 175.21 285.31 176.319 289.177 175.992C292.877 175.678 296.654 174.467 299.596 173.512C299.884 173.416 300.324 173.524 300.202 173.685C298.671 175.703 293.712 177.459 288.646 177.696C283.702 177.927 280.184 176.492 277.788 174.813C277.454 174.575 278.182 174.383 278.652 174.486Z"
