@@ -64,12 +64,6 @@ const eyesVariants: Variants = {
   hover: { scale: 1.2 },
 };
 
-const manVariants: Variants = {
-  initial: { scale: 0.4 },
-  view: { scale: 1 },
-  hover: { scale: 1 },
-};
-
 export const ManHandFoldSvg = (props: SVGProps<SVGSVGElement>) => {
   const scrollRef = React.useRef<HTMLDivElement>(null);
 
@@ -92,7 +86,7 @@ export const ManHandFoldSvg = (props: SVGProps<SVGSVGElement>) => {
             strokeWidth={4}
             strokeMiterlimit={10}
           />
-          <motion.g id="man" variants={manVariants} dur={500}>
+          <motion.g id="man">
             <motion.g variants={torsoVariants}>
               <motion.g id="torso">
                 <path
