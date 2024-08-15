@@ -42,6 +42,7 @@ export function SocialLinks() {
     <a
       href={link}
       key={name}
+      aria-label={`Link to ${name}`}
       className="group flex h-12 w-12 items-center justify-center rounded-md border-2 border-primary transition-colors duration-500 hover:bg-primary hover:text-bg xl:h-16 xl:w-16"
     >
       <Icon className="h-6 w-6 transition-transform group-hover:scale-110 xl:h-8 xl:w-8" />

@@ -9,13 +9,13 @@ export function NavDialog() {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <button onClick={() => setOpen(!open)}>
+      <button onClick={() => setOpen(!open)} aria-label="Menu">
         <Menu size={24} />
       </button>
       <Modal open={open} onClose={() => setOpen(false)}>
         <div className="flex h-full w-full flex-col">
           <div className="flex justify-end p-8">
-            <button onClick={() => setOpen(false)}>
+            <button onClick={() => setOpen(false)} aria-label="Collapse Menu">
               <ChevronRight />
             </button>
           </div>

@@ -56,18 +56,24 @@ export function Projects() {
             </div>
             <div className="flex flex-1 flex-col justify-center gap-8">
               <h2 className="text-2xl font-bold xl:text-3xl">{project.name}</h2>
-              <p className="text-zinc-500">{project.description}</p>
+              <p className="text-zinc-400">{project.description}</p>
               <div className="flex gap-8">
                 {!!project.link && (
                   <Tooltip message="Link">
-                    <a href={project.link}>
+                    <a
+                      href={project.link}
+                      aria-label={`Link to project named ${project.name}`}
+                    >
                       <ExternalLink />
                     </a>
                   </Tooltip>
                 )}
                 {!!project.sourceLink && (
                   <Tooltip message="Source Code">
-                    <a href={project.sourceLink}>
+                    <a
+                      href={project.sourceLink}
+                      aria-label={`Link to source code of project named ${project.name}`}
+                    >
                       <Code />
                     </a>
                   </Tooltip>
