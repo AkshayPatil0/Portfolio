@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  .font-outline-1 {
+    -webkit-text-stroke: 0.1rem var(--tw-shadow-color);
+    paint-order: stroke fill;
+  }
   .font-outline-2 {
     -webkit-text-stroke: 0.25rem var(--tw-shadow-color);
     paint-order: stroke fill;

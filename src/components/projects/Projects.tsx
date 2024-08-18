@@ -6,11 +6,11 @@ import { Tooltip } from "../common/ui/Tooltip";
 
 const PROJECTS = [
   {
-    name: "Web Socket Multiplayer Game",
+    name: "Star Rush: Battle Royale",
     description:
       "A multiplayer game built with WebSocket, Socket.IO, React, and Node.js provides real-time game-play by enabling seamless communication between clients and servers. React constructs the game interface, while Node.js handles game logic, and broadcasting updates.",
     thumbnail: "/thumbnails/ws-game.png",
-    link: "",
+    link: "https://star-rush.akshayp.me",
     sourceLink:
       "https://github.com/AkshayPatil0/ws-multiplayer-game?tab=readme-ov-file",
   },
@@ -21,6 +21,14 @@ const PROJECTS = [
     thumbnail: "/thumbnails/finsight.png",
     link: "",
     sourceLink: "https://github.com/AkshayPatil0/expense-tracker",
+  },
+  {
+    name: "zip-node-app: NPM utility package",
+    description:
+      "zip-node-app is npm utility package which easily creates a compressed zip archive of your Node.js project, excluding unnecessary files like node_modules and package-lock.json. Perfect for sharing, deployment, or backing up your project.",
+    thumbnail: "/thumbnails/zip-node-app.png",
+    link: "https://www.npmjs.com/package/zip-node-app",
+    sourceLink: "https://github.com/AkshayPatil0/zip-node-app",
   },
 ];
 
@@ -40,11 +48,11 @@ export function Projects() {
           <article
             key={i}
             className={cn(
-              "flex flex-col items-start gap-8 lg:gap-16 xl:gap-24",
+              "flex flex-col items-start gap-8 lg:items-center lg:gap-16 xl:gap-24",
               i % 2 != 0 ? "lg:flex-row-reverse" : "lg:flex-row",
             )}
           >
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-lg lg:w-5/12">
+            <div className="aspect-[16/9] w-full overflow-hidden rounded-lg lg:w-5/12">
               <Image
                 src={project.thumbnail}
                 className="h-full w-full object-cover"
